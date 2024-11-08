@@ -27,6 +27,9 @@ connectDB()
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.log("mongoDB connection failed", err));
 
+app.use("/api/v1/", (req, res) => {
+  res.send("Welcome to the HealthCare API");
+});
 app.use("/api/v1/users", userRoute)
 app.use("/api/v1/ai", aiRoute)
 app.use("/api/v1/medicine", medicineRoute)
